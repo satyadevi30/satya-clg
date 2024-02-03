@@ -1,0 +1,134 @@
+# Create and print undirected graph using adjecency matrix
+#CODE
+def addnode(v):
+    global count
+    if v  in nodes:
+        print(v ,"is available")
+    else:
+        nodes.append(v)
+        count=count+1
+        for x in graphs:
+            x.append(0)
+        temp=[]
+        for i in range(count):
+            temp.append(0)
+        graphs.append(temp)
+def addedge(node1,node2):
+    if node1 not in nodes:
+        print("not present")
+    elif node2 not in nodes:
+        print("not present")
+    else:
+        i=nodes.index(node1)
+        j=nodes.index(node2)
+        graphs[i][j]=1
+        graphs[j][i]=1
+def show():
+    for i in range(count):
+        for j in range(count):
+            print(graphs[i][j],end=" ")
+        print()
+graphs=[]
+nodes=[]
+count=0
+while True:
+    print()
+    print("1.addnode \n 2.addedge \n 3.show \n 4.exit")
+    ch=int(input("enter choice"))
+    if ch==1:
+        v=input("enter node")
+        addnode(v)
+    elif ch==2:
+        node1=input("enter node1")
+        node2=input("enter node2")
+        addedge(node1,node2)
+    elif ch==3:
+        show()
+    else:
+        break
+# OUTPUT
+1.addnode 
+ 2.addedge 
+ 3.show 
+ 4.exit
+enter choice1
+enter nodeA
+
+1.addnode 
+ 2.addedge 
+ 3.show 
+ 4.exit
+enter choice1
+enter nodeB
+
+1.addnode 
+ 2.addedge 
+ 3.show 
+ 4.exit
+enter choice1
+enter nodeC
+
+1.addnode 
+ 2.addedge 
+ 3.show 
+ 4.exit
+enter choice1
+enter nodeD
+
+1.addnode 
+ 2.addedge 
+ 3.show 
+ 4.exit
+enter choice3
+0 0 0 0 
+0 0 0 0 
+0 0 0 0 
+0 0 0 0 
+
+1.addnode 
+ 2.addedge 
+ 3.show 
+ 4.exit
+enter choice2
+enter node1A
+enter node2B
+
+1.addnode 
+ 2.addedge 
+ 3.show 
+ 4.exit
+enter choice2
+enter node1B
+enter node2C
+
+1.addnode 
+ 2.addedge 
+ 3.show 
+ 4.exit
+enter choice2
+enter node1C
+enter node2D
+
+1.addnode 
+ 2.addedge 
+ 3.show 
+ 4.exit
+enter choice2
+enter node1A
+enter node2D
+
+1.addnode 
+ 2.addedge 
+ 3.show 
+ 4.exit
+enter choice3
+0 1 0 1 
+1 0 1 0 
+0 1 0 1 
+1 0 1 0 
+
+1.addnode 
+ 2.addedge 
+ 3.show 
+ 4.exit
+enter choice4
