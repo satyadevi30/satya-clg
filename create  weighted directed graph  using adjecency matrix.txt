@@ -1,4 +1,4 @@
-# Create and print directed graph using adjecency matrix
+# Create and print weighted directed graph using adjecency matrix
 #CODE
 def addnode(v):
     global count
